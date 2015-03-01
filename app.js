@@ -2,7 +2,16 @@
 var pg = require("pg");
 
 var conString = "pg://sa:1234@localhost:5432/db1";
-
+var dbConfig = {
+    client: 'pg',
+    connection: {
+        host: 'localhost',
+        user: 'sa',
+        password: '1234',
+        database: 'db1',
+        charset: 'utf8'
+    }
+}; 
 var client = new pg.Client(conString);
 client.connect();
 
